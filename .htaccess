@@ -1,0 +1,46 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteBase /php07/
+
+RewriteRule ^kich-co-hinh-anh.html$ index.php?rt=image [L,QSA]
+RewriteRule ^captcha$ index.php?rt=image/captcha [L,QSA]
+ 
+RewriteRule ^cart.html$ index.php?rt=cart [L,QSA]
+RewriteRule ^cart/add$ index.php?rt=cart/add [L,QSA]
+RewriteRule ^cart/update$ index.php?rt=cart/update [L,QSA]
+RewriteRule ^cart/delete_all$ index.php?rt=cart/delete_all [L,QSA]
+RewriteRule ^cart/delete$ index.php?rt=cart/delete [L,QSA]
+RewriteRule ^cart/checkout$ index.php?rt=cart/checkout [L,QSA]
+
+RewriteRule ^cart/loadcart$ index.php?rt=cart/loadcart [L,QSA]
+RewriteRule ^cart/info$ index.php?rt=cart/info [L,QSA]
+
+RewriteRule ^category/(.*)_([0-9]+).html$ index.php?rt=product/category&category=$2 [L,QSA]
+RewriteRule ^san-pham/(.*)_([0-9]+).html$ index.php?rt=product&id=$2 [L,QSA]
+RewriteRule ^detail_([0-9]+)$ index.php?rt=product/details&id=$1 [L,QSA]
+RewriteRule ^product/loadInfo index.php?rt=product/loadInfo [L,QSA]
+RewriteRule ^product/rating index.php?rt=product/rating [L,QSA]
+
+
+RewriteRule ^bai-viet/(.*)_([0-9]+).html$ index.php?rt=article&id=$2 [L,QSA]
+RewriteRule ^tin-tuc.html index.php?rt=article/category [L,QSA]
+RewriteRule ^tin-tuc/(.*)_([0-9]+).html$  index.php?rt=article/category&category=$2 [L,QSA]
+
+RewriteRule ^user/history index.php?rt=user/history [L,QSA]
+RewriteRule ^user/forgot/pass index.php?rt=user/forgot_pass [L,QSA]
+RewriteRule ^user/created index.php?rt=user/created [L,QSA]
+RewriteRule ^user/change/pass index.php?rt=user/change_pass [L,QSA]
+RewriteRule ^user index.php?rt=user [L,QSA]
+
+
+RewriteRule ^home/search index.php?rt=home/search [L,QSA]
+RewriteRule ^login/submit index.php?rt=login/submit [L,QSA]
+RewriteRule ^login/logout index.php?rt=login/logout [L,QSA]
+
+
+RewriteRule ^(.*).html$ index.php?rt=$1 [L,QSA]
+
+

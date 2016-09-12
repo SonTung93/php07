@@ -1,0 +1,79 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteBase /php07/admin/
+
+RewriteRule ^login/submit index.php?rt=login/submit [L,QSA]
+RewriteRule ^login/logout index.php?rt=login/logout [L,QSA]
+
+RewriteRule ^setting/home index.php?rt=setting/home [L,QSA]
+RewriteRule ^setting/footer index.php?rt=setting/footer [L,QSA]
+
+RewriteRule ^order/delete/([0-9]+) index.php?rt=order/delete&id=$1 [L,QSA]
+RewriteRule ^order/change/status index.php?rt=order/change_status [L,QSA]
+RewriteRule ^order index.php?rt=order [L,QSA]
+
+RewriteRule ^transaction/delete/([0-9]+) index.php?rt=transaction/delete&id=$1 [L,QSA]
+RewriteRule ^transaction/change/status index.php?rt=transaction/change_status [L,QSA]
+RewriteRule ^transaction/view/([0-9]+) index.php?rt=transaction/view&id=$1 [L,QSA]
+RewriteRule ^transaction index.php?rt=transaction [L,QSA]
+
+
+RewriteRule ^banner/change/status index.php?rt=banner/change_status [L,QSA]
+RewriteRule ^banner/delete/([0-9]+) index.php?rt=banner/delete&id=$1 [L,QSA]
+RewriteRule ^banner/edit/([0-9]+) index.php?rt=banner/edit&id=$1 [L,QSA]
+RewriteRule ^banner/create index.php?rt=banner/create [L,QSA]
+RewriteRule ^banner index.php?rt=banner [L,QSA]
+
+RewriteRule ^user/change/status index.php?rt=user/change_status [L,QSA]
+RewriteRule ^user/delete/([0-9]+) index.php?rt=user/delete&id=$1 [L,QSA]
+RewriteRule ^user/edit/([0-9]+) index.php?rt=user/edit&id=$1 [L,QSA]
+RewriteRule ^user/create index.php?rt=user/create [L,QSA]
+RewriteRule ^user index.php?rt=user [L,QSA]
+
+RewriteRule ^rating/change/status index.php?rt=rating/change_status [L,QSA]
+RewriteRule ^rating index.php?rt=rating [L,QSA]
+RewriteRule ^rating/delete/([0-9]+) index.php?rt=rating/delete&id=$1 [L,QSA]
+
+RewriteRule ^attribute/([0-9]+)/delete_attribute/([0-9]+) index.php?rt=attribute/delete_attribute&pid=$1&id=$2 [L,QSA]
+RewriteRule ^attribute/([0-9]+)/edit_attribute/([0-9]+) index.php?rt=attribute/edit_attribute&pid=$1&id=$2 [L,QSA]
+RewriteRule ^attribute/add_attribute/([0-9]+) index.php?rt=attribute/add_attribute&id=$1 [L,QSA]
+RewriteRule ^attribute/delete/([0-9]+) index.php?rt=attribute/delete&id=$1 [L,QSA]
+RewriteRule ^attribute/edit/([0-9]+) index.php?rt=attribute/edit&id=$1 [L,QSA]
+RewriteRule ^attribute/create index.php?rt=attribute/create [L,QSA]
+RewriteRule ^attribute index.php?rt=attribute [L,QSA]
+
+RewriteRule ^product/change_featured index.php?rt=product/change_featured [L,QSA]
+RewriteRule ^product/change/status index.php?rt=product/change_status [L,QSA]
+RewriteRule ^product/delete/([0-9]+) index.php?rt=product/delete&id=$1 [L,QSA]
+RewriteRule ^product/edit/([0-9]+) index.php?rt=product/edit&id=$1 [L,QSA]
+RewriteRule ^product/create index.php?rt=product/create [L,QSA]
+RewriteRule ^product index.php?rt=product [L,QSA]
+
+RewriteRule ^article/upload_images index.php?rt=article/uploader [L,QSA]
+RewriteRule ^article/change_featured index.php?rt=article/change_featured [L,QSA]
+RewriteRule ^article/change/status index.php?rt=article/change_status [L,QSA]
+RewriteRule ^article/delete/([0-9]+) index.php?rt=article/delete&id=$1 [L,QSA]
+RewriteRule ^article/edit/([0-9]+) index.php?rt=article/edit&id=$1 [L,QSA]
+RewriteRule ^article/create index.php?rt=article/create [L,QSA]
+RewriteRule ^article index.php?rt=article [L,QSA]
+
+RewriteRule ^category/change_featured index.php?rt=category/change_featured [L,QSA]
+RewriteRule ^category/change/status index.php?rt=category/change_status [L,QSA]
+RewriteRule ^category/delete/([0-9]+) index.php?rt=category/delete&id=$1 [L,QSA]
+RewriteRule ^category/edit/([0-9]+) index.php?rt=category/edit&id=$1 [L,QSA]
+RewriteRule ^category/create index.php?rt=category/create [L,QSA]
+RewriteRule ^category index.php?rt=category [L,QSA]
+
+RewriteRule ^menu/change/order index.php?rt=menu/change_order [L,QSA]
+RewriteRule ^menu/change/status index.php?rt=menu/change_status [L,QSA]
+RewriteRule ^menu/edit/([0-9]+) index.php?rt=menu/edit&id=$1 [L,QSA]
+RewriteRule ^menu/delete/([0-9]+) index.php?rt=menu/delete&id=$1 [L,QSA]
+RewriteRule ^menu/create index.php?rt=menu/create [L,QSA]
+RewriteRule ^menu index.php?rt=menu [L,QSA]
+
+RewriteRule ^(.*).html$ index.php?rt=$1 [L,QSA]
